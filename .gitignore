@@ -1,0 +1,112 @@
+# === GLOBAL ===
+*.log
+*.tmp
+*.temp
+*.swp
+.DS_Store
+Thumbs.db
+.env
+.env.*
+
+# === NODE / REACT ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+dist/
+build/
+.cache/
+.next/
+out/
+
+# Vite / Webpack / Parcel
+.vite/
+.vitepress/
+coverage/
+
+# === JAVA ===
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.log
+*.iws
+*.ipr
+target/
+bin/
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# IntelliJ
+.idea/
+
+# Maven
+.mvn/
+
+# Gradle
+.gradle/
+build/
+
+# === PYTHON ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+develop-eggs/
+pip-log.txt
+pip-delete-this-directory.txt
+env/
+venv/
+ENV/
+.venv/
+.pytest_cache/
+.tox/
+.coverage
+coverage.xml
+htmlcov/
+.mypy_cache/
+.pyre/
+.dmypy.json
+
+# === PHP ===
+vendor/
+composer.lock
+composer.phar
+*.log
+*.cache
+*.tmp
+.env.local
+
+# Laravel / Symfony / Common Frameworks
+storage/
+bootstrap/cache/
+.idea/
+
+# === VSCode / IDEs / Editors ===
+.vscode/
+*.sublime*
+*.code-workspace
+
+# === OS-specific ===
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk

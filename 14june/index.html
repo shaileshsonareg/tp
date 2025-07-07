@@ -1,0 +1,35 @@
+<table border="1">
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+    </thead>
+
+    <tbody id="users">
+
+    </tbody>
+</table>
+
+
+<script>
+
+url = "https://jsonplaceholder.typicode.com/users"
+
+fetch(url).then(res => res.json()).then(res => {
+    console.table(res)
+
+    output = ``;
+
+    for(let u of res) {
+
+        output = output + `<tr>
+            <td>${u.id}</td>
+            <td>${u.name}</td>
+            <td>${u.email}</td>
+            </tr>`;
+            
+    }
+    document.getElementById("users").innerHTML = output;
+})
+
+</script>
