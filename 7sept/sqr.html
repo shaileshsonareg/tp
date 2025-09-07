@@ -1,0 +1,19 @@
+<label >Number</label>
+<input type="text" id="num">
+<button onclick="getSqr()">Get Square</button>
+<div id="result">
+    I will be updated when you click button
+</div>
+
+<script>
+
+//HW: https://codeinsightacademy.com/blog/
+
+function getSqr() {
+    var x = document.getElementById("num").value
+    output = `Square of ${x} is ${x * x}`
+
+    document.getElementById("result").innerHTML = output
+}
+
+</script>
