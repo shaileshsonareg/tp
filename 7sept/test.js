@@ -1,5 +1,96 @@
+console.log("Hello World");
+
+setTimeout(()=> {
+    console.log("Hello from set time out");
+}, 0)
+
+new Promise((res) => res()).then(() => {
+    console.log("Hello from ...then()");
+});
+
+console.log("Bye World");
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// fetch("https://jsonplaceholder.typicode.com/users")
+// .then(res => res.json())
+// .then(data => {
+//     console.table(data)
+// })
+
+
+// async function getUsers() {
+//     var data = await fetch("https://jsonplaceholder.typicode.com/users").then(res => res.json())
+//     console.table(data);
+// }
+
+// getUsers()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// dress = (flag) => {
+//     return new Promise((res, rej) => {
+//         console.log("Dress prepartion started...");
+        
+//         setTimeout(() => {
+//             if(flag == true)
+//             res("Dress ready hai, lekar jao")
+//             else 
+//             rej("Dress jal gaya Baiju bhai, aap diamond ring lekar jao ya fir apne liye bandaid")
+//         }, 8000)
+
+//     })
+
+// }
+
+// cake = new Promise((res, rej) => {
+//     console.log("Cake prepartion started...");
+    
+//     setTimeout(() => {
+//         res("Cake ready hai, lekar jao")
+//     }, 3000)
+
+// })
+
+// dress(false).then(res => {
+//     console.log(res);
+// }).catch(rej => {
+//     console.error(rej);
+// })
+
+// cake.then(res => {
+//     console.log(res);
+// })
 
 
 
