@@ -1,4 +1,52 @@
+Number: <input type="text" id="num1" value="5"> <br>
+<button onclick="getSqr()">Get Square</button>
+<h1 id="result">I will be updated after you click btn</h1>
+
 <script>
+
+function getSqr() {
+    x = document.getElementById("num1").value
+    sqr = x * x
+    output = `Square of ${x} is ${sqr}`
+    console.log(output);
+    document.getElementById("result").innerHTML = output
+}
+
+//CW4: WAP to read 2 numbers and print addition in h1
+//5 + 6 = 11
+
+
+
+
+
+
+
+
+
+
+
+// for(i = 1; i <= 10; i++) {
+//     console.log(`${i}. Hello World`);
+// }
+
+//CW3: WAP to read a number and print table of that number
+//5 * 1 = 5
+//5 * 2 = 10
+//...
+//5 * 10 = 50
+// num = 6
+// for(i = 1; i <= 10; i++) {
+//     console.log(`${num} * ${i} = ${num * i}`);
+// }
+
+
+
+
+
+
+
+
+
 // num = -5
 
 // if(num > 0) {
@@ -10,17 +58,17 @@
 // }
 
 //CW2: WAP to read 3 numbers and find greatest
-num1 = 5
-num2 = 6
-num3 = 7
+// num1 = 5
+// num2 = 6
+// num3 = 7
 
-if(num1 > num2 && num1 > num3) {
-    console.log(`${num1} is greatest`);
-} else if(num2 > num3) {
-    console.log(`${num2} is greatest`);
-} else {
-    console.log(`${num3} is greatest`);
-}
+// if(num1 > num2 && num1 > num3) {
+//     console.log(`${num1} is greatest`);
+// } else if(num2 > num3) {
+//     console.log(`${num2} is greatest`);
+// } else {
+//     console.log(`${num3} is greatest`);
+// }
 
 
 
