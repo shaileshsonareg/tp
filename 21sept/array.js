@@ -6,8 +6,35 @@ console.log("First: ", arr[0]);
 console.log("Last: ", arr[arr.length - 1]);
 
 for(i = 0; i < arr.length; i++) {
-    console.log(arr[i]);
+    console.log(`arr[${i}] = ${arr[i]}`);
 }
+
+
+for(i = 0; i < arr.length; i++) {
+    console.log(`Square of ${arr[i]} is ${arr[i] * arr[i]}`);
+}
+
+
+sum = 0
+for(i = 0; i < arr.length; i++) {
+    sum = sum + arr[i]
+}
+
+console.log("Total of all elements: ", sum);
+
+
+for(i = 0; i < arr.length; i++) {
+    if(arr[i] % 2 == 0) {
+        console.log("Is even: ", arr[i]);
+
+    }
+}
+
+
+
+
+
+
 
 //output: 
 /**
