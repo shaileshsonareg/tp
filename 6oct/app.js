@@ -29,15 +29,29 @@ app.post("/products", (req, res) => {
 
 
 
-
-
-
-
-
-
 app.put("/products", (req, res) => {
-    res.send("Products put method")
+
+    var prod = {
+            "id": 2,
+            "title": "oppo",
+            "price": 50000
+        }
+    
+    products = products.map(p => {
+                    if(p.id == prod.id) {
+                        p.title = prod.title;
+                        p.price = prod.price;
+                    }
+                })
+
+    res.send("Product updated succesfully")
 })
+
+
+
+
+
+
 
 
 app.delete("/products", (req, res) => {
