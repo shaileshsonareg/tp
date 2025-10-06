@@ -31,33 +31,39 @@ app.post("/products", (req, res) => {
 
 app.put("/products", (req, res) => {
 
-    var prod = {
-            "id": 2,
-            "title": "oppo",
-            "price": 50000
-        }
+    // var prod = {
+    //         "id": 2,
+    //         "title": "oppo",
+    //         "price": 50000
+    //     }
+
+    var prod = req.body;
     
     products = products.map(p => {
                     if(p.id == prod.id) {
                         p.title = prod.title;
                         p.price = prod.price;
                     }
+
+                    return p;
                 })
 
     res.send("Product updated succesfully")
 })
 
+app.delete("/products/:id", (req, res) => {
 
+    // var id = 1
+    console.log("PARAMS: ", req.params)
+    console.log("QUERY: ", req.query)
+    var id = Number(req.params.id)
 
+    products = products.filter(p => {
+        return p.id !== id;
+    })
 
-
-
-
-
-app.delete("/products", (req, res) => {
-    res.send("Products delete method")
+    res.send("Product deleted succesfully")
 })
-
 
 
 app.listen(3000, () => {
