@@ -1,0 +1,66 @@
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Stocks</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody id="products">
+    </tbody>
+</table>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+const api_url = "http://localhost:3000/products"
+
+axios.get(api_url)
+  .then(response => {    
+    console.log('Data fetched successfully:', response.data);
+
+    var data = response.data
+
+    output = ""
+
+    for(let p of data) {
+
+        output += `<tr>
+            <td>${p.id}</td>
+            <td>${p.title}</td>
+            <td>${p.price}</td>
+            <td>${p.stocks}</td>
+            <td><button onclick="deleteProduct(${p.id})">Delete</button></td>
+            </tr>
+            `
+            // <td><button onclick="javascript:confirm('Are you sure?')">Delete</button></td>
+    } 
+
+    document.getElementById("products").innerHTML = output
+
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+
+  function deleteProduct(id) {
+
+    if (!confirm('Are you sure?')) {
+        return false;
+    }
+
+    axios.delete(api_url+"/"+id)
+        .then(response => {    
+            alert("Product deleted succesfully")
+            window.location.reload();
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        }); 
+  }
+
+</script>
