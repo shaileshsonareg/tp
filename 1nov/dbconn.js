@@ -6,7 +6,7 @@ const mysql = require('mysql2');
 const db = mysql.createConnection({
   host: 'ciacloud.in',
   user: 'tpuser',
-  password: '%TGBbgt5',
+  password: 'Shift+5',
   database: 'tpdb'
 });
 
