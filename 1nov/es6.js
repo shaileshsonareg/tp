@@ -1,3 +1,29 @@
+// counter = 0
+
+// setInterval(() => {
+//     console.log(counter++);
+// }, 1000)
+
+
+// setTimeout(() => {
+
+//     console.log("Happy New Year. Kya yaar aaj bhi baarish ho rahi hai");
+    
+
+// }, 5000);
+
+
+
+
+
+
+
+
+
+
+
+
+
 // HOMEWORK: WAP to perform CRUD on array of employees;
 
 //add => push
