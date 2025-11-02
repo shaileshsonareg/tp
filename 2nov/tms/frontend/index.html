@@ -1,0 +1,70 @@
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="task-table-body">
+    </tbody>
+    <fieldset>
+        <legend>Add Task</legend>
+        <input type="text" id="title">
+        <select name="" id="status">
+            <option value="TODO">TODO</option>
+            <option value="WIP">WIP</option>
+            <option value="PENDING">PENDING</option>
+            <option value="DONE">DONE</option>
+        </select>
+
+        <button onclick="saveTask()">Add Task</button>
+    </fieldset>
+</table>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    // fetch('http://localhost:3000/task')
+    axios.get('http://localhost:3000/task')
+        .then(response => {
+            console.table(response.data);
+            const tbody = document.getElementById('task-table-body');
+            let data = '';
+            response.data.forEach(task => {
+                data += `
+                <tr>
+                    <td>${task.id}</td>
+                    <td>${task.title}</td>
+                    <td>${task.status}</td>
+                    <td>
+                        <button onclick="deleteTask(${task.id})">Delete</button>
+                    </td>
+                </tr>
+                `;
+            });
+            tbody.innerHTML = data;
+        });
+
+    function saveTask() {
+        const title = document.getElementById('title').value;
+        const status = document.getElementById('status').value;
+        axios.post('http://localhost:3000/task', {
+            title,
+            status
+        }).then(response => {
+            console.log(response.data);
+            window.location.reload();
+        });
+    }
+
+    function deleteTask(id) {
+        if(confirm('Are you sure you want to delete this task?') === false) {
+            return;
+        }
+        axios.delete(`http://localhost:3000/task/${id}`)
+            .then(response => {
+                console.log(response.data);
+                window.location.reload();
+            });
+    }
+</script>
