@@ -1,0 +1,36 @@
+<input type="text" id="num1" />
+<br>
+<input type="text" id="num2" />
+<br>
+<button onclick="getAdd()">Get Addition</button>
+<button onclick="getSub()">Get Subtraction</button>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  
+  <script>
+
+    function getAdd() {
+
+        axios.get('http://localhost:3000/calc', {
+        params: {
+            num1: 7,
+            num2: 8
+        }
+        })
+        .then(response => {
+        console.log('Response:', response.data);
+        })
+    }
+
+    function getSub() {
+
+        axios.post('http://localhost:3000/calc', {
+            num1: 7,
+            num2: 8
+        })
+        .then(response => {
+        console.log('Response:', response.data);
+        })
+    }
+  
+  </script>
